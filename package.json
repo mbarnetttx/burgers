@@ -1,0 +1,24 @@
+{
+  "name": "burgers",
+  "version": "1.0.0",
+  "description": "An app that allows you to \"add\" and \"eat\" burgers",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbarnetttx/burgers.git"
+  },
+  "author": "Meredith Barnett",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/mbarnetttx/burgers/issues"
+  },
+  "homepage": "https://github.com/mbarnetttx/burgers#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.3",
+    "mysql": "^2.18.1"
+  }
+}
