@@ -1,0 +1,42 @@
+<form action="/create-burger" method="POST">
+
+    <div class="form-group">
+        <label for="burgers">burgers</label>
+        <input type="text" name="burgerName" class="form-control" id="input" aria-describedby="input">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<h2>Non-devoured burgers</h2>
+
+{{#each burgers}}
+{{#unless this.devoured}}
+<p>{{this.burgerName}}</p>
+<button type="button" value="{{this.id}}">Devour</button>
+{{/unless}}
+{{/each}}
+
+<h2>Devoured Burgers</h2>
+{{#each burgers}}
+{{#if this.devoured}}
+<p>{{this.burgerName}}</p>
+{{/if}}
+{{/each}}
+
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $.ajax({
+            method:"PUT",
+            url:"/update-burger/" + $(this).val(),
+                    })
+                    .then(function(){
+                        window.location.reload();
+                    })
+                    .catch(function(error){
+                        console.log(error);
+                    });
+    });
+});
+
+</script>
